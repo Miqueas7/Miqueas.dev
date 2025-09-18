@@ -1,87 +1,636 @@
-<!doctype html>
-<div class="container">
-<header class="section__header"><h2>Habilidades</h2></header>
-<div class="skills">
-<div class="skills__group">
-<h3>Minería</h3>
-<ul class="chips">
-<li>Ventsim</li><li>Rocscience</li><li>GIS</li><li>Civil 3D</li>
-</ul>
-</div>
-<div class="skills__group">
-<h3>Software & Data</h3>
-<ul class="chips">
-<li>Python</li><li>C# / .NET</li><li>Blazor</li><li>SQL Server</li><li>TensorFlow</li><li>Power BI</li>
-</ul>
-</div>
-</div>
-</div>
-</section>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    
+    <!-- SEO Meta Tags -->
+    <title>Miqueas Quintanilla | Mining Engineer & Data Scientist</title>
+    <meta name="description" content="Ingeniero de Minas especializado en Machine Learning, Data Science y desarrollo de software para la industria minera. Python, C#, TensorFlow, Power BI.">
+    <meta name="keywords" content="Ingeniero de Minas, Data Science, Machine Learning, Python, Mining Software, Ayacucho, Peru">
+    <meta name="author" content="Miqueas Quintanilla Ventura">
+    
+    <!-- Open Graph -->
+    <meta property="og:title" content="Miqueas Quintanilla - Mining Engineer & Data Scientist">
+    <meta property="og:description" content="Transformando la minería con tecnología: ML, IA y automatización">
+    <meta property="og:image" content="assets/img/og-image.jpg">
+    <meta property="og:url" content="https://miqueas7.github.io">
+    <meta property="og:type" content="website">
+    
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Miqueas Quintanilla - Mining & Tech">
+    <meta name="twitter:description" content="Mining Engineer | Data Scientist | ML Developer">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="assets/img/favicon.ico">
+    <link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+    
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <!-- Styles -->
+    <link rel="stylesheet" href="assets/css/main.css">
+    <link rel="stylesheet" href="assets/css/animations.css">
+    <link rel="stylesheet" href="assets/css/responsive.css">
+    
+    <!-- PWA Manifest -->
+    <link rel="manifest" href="manifest.json">
+    
+    <!-- Theme Color -->
+    <meta name="theme-color" content="#0a0e1a">
+</head>
+<body>
+    <!-- Loading Screen -->
+    <div id="loader" class="loader">
+        <div class="loader-content">
+            <div class="mining-loader">
+                <i class="fas fa-gem spinning-gem"></i>
+                <div class="progress-bar">
+                    <div class="progress-fill"></div>
+                </div>
+                <p class="loader-text">Inicializando sistemas...</p>
+            </div>
+        </div>
+    </div>
 
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <a href="#home" class="nav-brand">
+                <span class="brand-icon">⚒️</span>
+                <span class="brand-text">MQV</span>
+            </a>
+            
+            <div class="nav-menu" id="navMenu">
+                <a href="#home" class="nav-link active" data-section="home">
+                    <i class="fas fa-home"></i>
+                    <span>Inicio</span>
+                </a>
+                <a href="#about" class="nav-link" data-section="about">
+                    <i class="fas fa-user"></i>
+                    <span>Sobre mí</span>
+                </a>
+                <a href="#experience" class="nav-link" data-section="experience">
+                    <i class="fas fa-briefcase"></i>
+                    <span>Experiencia</span>
+                </a>
+                <a href="#projects" class="nav-link" data-section="projects">
+                    <i class="fas fa-code-branch"></i>
+                    <span>Proyectos</span>
+                </a>
+                <a href="#skills" class="nav-link" data-section="skills">
+                    <i class="fas fa-tools"></i>
+                    <span>Skills</span>
+                </a>
+                <a href="#publications" class="nav-link" data-section="publications">
+                    <i class="fas fa-newspaper"></i>
+                    <span>Publicaciones</span>
+                </a>
+                <a href="#contact" class="nav-link" data-section="contact">
+                    <i class="fas fa-envelope"></i>
+                    <span>Contacto</span>
+                </a>
+            </div>
+            
+            <div class="nav-actions">
+                <button class="theme-toggle" id="themeToggle" aria-label="Cambiar tema">
+                    <i class="fas fa-moon" id="themeIcon"></i>
+                </button>
+                <button class="terminal-toggle" id="terminalToggle" aria-label="Abrir terminal">
+                    <i class="fas fa-terminal"></i>
+                </button>
+                <button class="nav-toggle" id="navToggle" aria-label="Menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+    </nav>
 
-<!-- DOCENCIA -->
-<section id="teaching" class="section section--alt">
-<div class="container">
-<header class="section__header"><h2>Docencia & Ponencias</h2></header>
-<ul class="list">
-<li>Taller: Python aplicado a minería (2024–2025)</li>
-<li>Curso: Analítica con Power BI para operaciones mineras</li>
-</ul>
-</div>
-</section>
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <canvas id="particlesCanvas"></canvas>
+        <div class="hero-content">
+            <div class="hero-text">
+                <div class="hero-badge">
+                    <span class="pulse-dot"></span>
+                    <span>Disponible para proyectos</span>
+                </div>
+                <h1 class="hero-title">
+                    <span class="greeting">Hola, soy</span>
+                    <span class="name glitch" data-text="Miqueas Quintanilla">Miqueas Quintanilla</span>
+                </h1>
+                <div class="hero-subtitle">
+                    <span class="role-prefix">></span>
+                    <span class="typewriter" id="typewriter"></span>
+                    <span class="cursor">|</span>
+                </div>
+                <p class="hero-description">
+                    Transformo operaciones mineras con <span class="highlight">Machine Learning</span> y 
+                    <span class="highlight">Data Science</span>. Especializado en automatización de procesos
+                    y desarrollo de software para la industria extractiva.
+                </p>
+                <div class="hero-stats">
+                    <div class="stat">
+                        <span class="stat-value" data-target="10">0</span>
+                        <span class="stat-label">Años Experiencia</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-value" data-target="50">0</span>
+                        <span class="stat-label">Proyectos</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-value" data-target="15">0</span>
+                        <span class="stat-label">Certificaciones</span>
+                    </div>
+                </div>
+                <div class="hero-cta">
+                    <a href="#projects" class="btn btn-primary">
+                        <i class="fas fa-rocket"></i>
+                        Explorar Proyectos
+                    </a>
+                    <a href="assets/docs/CV_Miqueas_Quintanilla.pdf" download class="btn btn-secondary">
+                        <i class="fas fa-download"></i>
+                        Descargar CV
+                    </a>
+                    <button class="btn btn-icon" id="playDemo" aria-label="Ver demo">
+                        <i class="fas fa-play"></i>
+                    </button>
+                </div>
+            </div>
+            <div class="hero-visual">
+                <div class="floating-cards">
+                    <div class="card-tech python">
+                        <i class="fab fa-python"></i>
+                        <span>Python</span>
+                    </div>
+                    <div class="card-tech ml">
+                        <i class="fas fa-brain"></i>
+                        <span>ML</span>
+                    </div>
+                    <div class="card-tech mining">
+                        <i class="fas fa-hard-hat"></i>
+                        <span>Mining</span>
+                    </div>
+                    <div class="card-tech data">
+                        <i class="fas fa-database"></i>
+                        <span>Data</span>
+                    </div>
+                </div>
+                <div class="hero-image">
+                    <div class="image-frame">
+                        <div class="image-glow"></div>
+                        <!-- Aquí iría tu foto o un avatar 3D -->
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="scroll-indicator">
+            <span>Scroll para explorar</span>
+            <i class="fas fa-chevron-down"></i>
+        </div>
+    </section>
 
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-number">01</span>
+                <h2 class="section-title">
+                    <span class="title-icon">👨‍💻</span>
+                    Sobre Mí
+                </h2>
+                <p class="section-subtitle">Mining Engineer + Software Developer = Innovation</p>
+            </div>
+            
+            <div class="about-content">
+                <div class="about-text">
+                    <div class="about-intro">
+                        <h3>Ingeniero híbrido: donde la roca se encuentra con el código</h3>
+                        <p>
+                            Soy un <span class="text-gradient">Ingeniero de Minas</span> de la UNSCH con una 
+                            <span class="text-gradient">Maestría en Ingeniería de Software</span> de la UNMSM (1er puesto).
+                            Mi pasión es fusionar la minería tradicional con tecnología de vanguardia.
+                        </p>
+                        <p>
+                            Con más de 10 años de experiencia, he desarrollado soluciones que han optimizado operaciones
+                            mineras hasta en un <span class="highlight-number">100%</span>, implementando Machine Learning
+                            para predicción de sostenimiento, automatización de procesos geotécnicos y sistemas de gestión inteligente.
+                        </p>
+                    </div>
+                    
+                    <div class="about-highlights">
+                        <div class="highlight-card">
+                            <i class="fas fa-trophy"></i>
+                            <div>
+                                <h4>Logro destacado</h4>
+                                <p>Software para creación masiva de planos: 700+ planos en minutos</p>
+                            </div>
+                        </div>
+                        <div class="highlight-card">
+                            <i class="fas fa-graduation-cap"></i>
+                            <div>
+                                <h4>Docente & Speaker</h4>
+                                <p>Python para Minería, ML aplicado a operaciones</p>
+                            </div>
+                        </div>
+                        <div class="highlight-card">
+                            <i class="fas fa-code"></i>
+                            <div>
+                                <h4>Stack Principal</h4>
+                                <p>Python, C#, TensorFlow, Power BI, SQL</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="about-values">
+                        <h4>Mis Valores Profesionales</h4>
+                        <div class="values-grid">
+                            <div class="value-item">
+                                <i class="fas fa-lightbulb"></i>
+                                <span>Innovación Constante</span>
+                            </div>
+                            <div class="value-item">
+                                <i class="fas fa-chart-line"></i>
+                                <span>Resultados Medibles</span>
+                            </div>
+                            <div class="value-item">
+                                <i class="fas fa-users"></i>
+                                <span>Colaboración</span>
+                            </div>
+                            <div class="value-item">
+                                <i class="fas fa-sync-alt"></i>
+                                <span>Mejora Continua</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="about-visual">
+                    <div class="skills-radar">
+                        <canvas id="skillsRadar"></canvas>
+                    </div>
+                    <div class="tech-orbit">
+                        <div class="orbit-center">
+                            <i class="fas fa-user-astronaut"></i>
+                        </div>
+                        <div class="orbit-ring ring-1"></div>
+                        <div class="orbit-ring ring-2"></div>
+                        <div class="orbit-ring ring-3"></div>
+                        <div class="orbit-item item-1" data-tooltip="Python">
+                            <i class="fab fa-python"></i>
+                        </div>
+                        <div class="orbit-item item-2" data-tooltip="Machine Learning">
+                            <i class="fas fa-brain"></i>
+                        </div>
+                        <div class="orbit-item item-3" data-tooltip="Data Science">
+                            <i class="fas fa-chart-bar"></i>
+                        </div>
+                        <div class="orbit-item item-4" data-tooltip="Mining Software">
+                            <i class="fas fa-hard-hat"></i>
+                        </div>
+                        <div class="orbit-item item-5" data-tooltip="C# .NET">
+                            <i class="fas fa-code"></i>
+                        </div>
+                        <div class="orbit-item item-6" data-tooltip="SQL">
+                            <i class="fas fa-database"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-<!-- PUBLICACIONES -->
-<section id="publications" class="section">
-<div class="container">
-<header class="section__header"><h2>Publicaciones</h2></header>
-<ul class="list">
-<li>Artículos técnicos sobre IA y automatización en minería — <a href="#">Blog técnico</a></li>
-</ul>
-</div>
-</section>
+    <!-- Experience Timeline -->
+    <section id="experience" class="experience">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-number">02</span>
+                <h2 class="section-title">
+                    <span class="title-icon">💼</span>
+                    Experiencia Profesional
+                </h2>
+                <p class="section-subtitle">Una década transformando la minería con tecnología</p>
+            </div>
+            
+            <div class="experience-filters">
+                <button class="filter-btn active" data-filter="all">
+                    <i class="fas fa-th"></i> Todo
+                </button>
+                <button class="filter-btn" data-filter="mining">
+                    <i class="fas fa-hard-hat"></i> Minería
+                </button>
+                <button class="filter-btn" data-filter="software">
+                    <i class="fas fa-code"></i> Software
+                </button>
+                <button class="filter-btn" data-filter="teaching">
+                    <i class="fas fa-chalkboard-teacher"></i> Docencia
+                </button>
+            </div>
+            
+            <div class="timeline" id="experienceTimeline">
+                <!-- Timeline items will be loaded dynamically -->
+            </div>
+        </div>
+    </section>
 
+    <!-- Projects Section -->
+    <section id="projects" class="projects">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-number">03</span>
+                <h2 class="section-title">
+                    <span class="title-icon">🚀</span>
+                    Proyectos Destacados
+                </h2>
+                <p class="section-subtitle">Soluciones que transforman la industria</p>
+            </div>
+            
+            <div class="projects-grid" id="projectsGrid">
+                <!-- Projects will be loaded dynamically -->
+            </div>
+            
+            <div class="projects-cta">
+                <a href="https://github.com/Miqueas7" target="_blank" class="btn btn-outline">
+                    <i class="fab fa-github"></i>
+                    Ver más en GitHub
+                </a>
+            </div>
+        </div>
+    </section>
 
-<!-- EDUCACIÓN -->
-<section id="education" class="section section--alt">
-<div class="container">
-<header class="section__header"><h2>Educación & Certificaciones</h2></header>
-<ul class="list">
-<li>Maestría en Ingeniería de Software — UNMSM (1.º puesto de ingreso)</li>
-<li>Ingeniería de Minas — UNSCH</li>
-<li>MOS Expert — Microsoft Office</li>
-</ul>
-</div>
-</section>
+    <!-- Skills Section -->
+    <section id="skills" class="skills">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-number">04</span>
+                <h2 class="section-title">
+                    <span class="title-icon">⚡</span>
+                    Tech Stack & Habilidades
+                </h2>
+                <p class="section-subtitle">Herramientas que domino para crear soluciones</p>
+            </div>
+            
+            <div class="skills-container">
+                <div class="skills-category">
+                    <h3 class="category-title">
+                        <i class="fas fa-mountain"></i>
+                        Mining Software
+                    </h3>
+                    <div class="skills-grid" id="miningSkills">
+                        <!-- Skills will be loaded dynamically -->
+                    </div>
+                </div>
+                
+                <div class="skills-category">
+                    <h3 class="category-title">
+                        <i class="fas fa-laptop-code"></i>
+                        Development Stack
+                    </h3>
+                    <div class="skills-grid" id="devSkills">
+                        <!-- Skills will be loaded dynamically -->
+                    </div>
+                </div>
+                
+                <div class="skills-category">
+                    <h3 class="category-title">
+                        <i class="fas fa-brain"></i>
+                        Data Science & ML
+                    </h3>
+                    <div class="skills-grid" id="dataSkills">
+                        <!-- Skills will be loaded dynamically -->
+                    </div>
+                </div>
+            </div>
+            
+            <div class="certifications">
+                <h3>Certificaciones</h3>
+                <div class="cert-slider" id="certSlider">
+                    <!-- Certifications will be loaded dynamically -->
+                </div>
+            </div>
+        </div>
+    </section>
 
+    <!-- Publications Section -->
+    <section id="publications" class="publications">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-number">05</span>
+                <h2 class="section-title">
+                    <span class="title-icon">📚</span>
+                    Publicaciones & Docencia
+                </h2>
+                <p class="section-subtitle">Compartiendo conocimiento con la comunidad</p>
+            </div>
+            
+            <div class="publications-grid">
+                <div class="publication-card">
+                    <div class="pub-icon">
+                        <i class="fas fa-network-wired"></i>
+                    </div>
+                    <h3>IoT en Minería</h3>
+                    <p>Tecnologías de monitoreo y sensores para mejorar la seguridad y eficiencia</p>
+                    <a href="https://www.codeauni.com/comunidad/blog/108/" target="_blank" class="pub-link">
+                        Leer más <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+                
+                <div class="publication-card">
+                    <div class="pub-icon">
+                        <i class="fab fa-python"></i>
+                    </div>
+                    <h3>Python en Geología Minera</h3>
+                    <p>Aplicaciones prácticas de Python en SIG y análisis geológico</p>
+                    <a href="https://www.codeauni.com/comunidad/blog/137/" target="_blank" class="pub-link">
+                        Leer más <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+                
+                <div class="publication-card">
+                    <div class="pub-icon">
+                        <i class="fas fa-robot"></i>
+                    </div>
+                    <h3>ML en Geometalurgia</h3>
+                    <p>Machine Learning aplicado a procesos metalúrgicos</p>
+                    <a href="https://www.codeauni.com/comunidad/blog/212/" target="_blank" class="pub-link">
+                        Leer más <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+            </div>
+            
+            <div class="teaching">
+                <h3>Cursos y Talleres</h3>
+                <div class="teaching-timeline">
+                    <div class="teaching-item">
+                        <span class="year">2024-2025</span>
+                        <h4>Python aplicado a minería</h4>
+                        <p>INARQ - Programa Especializado Minería 4.0</p>
+                    </div>
+                    <div class="teaching-item">
+                        <span class="year">2024</span>
+                        <h4>Programación y Computación</h4>
+                        <p>UNMSM - Ingeniería Geológica</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-<!-- CONTACTO -->
-<section id="contact" class="section">
-<div class="container">
-<header class="section__header"><h2>Contacto</h2></header>
-<div class="contact">
-<p>¿Proyecto o colaboración? Escríbeme:</p>
-<p>
-<a class="btn btn--primary" href="mailto:contacto@miqueas.dev">contacto@miqueas.dev</a>
-<a class="btn btn--outline" href="https://wa.me/51999999999" target="_blank" rel="noopener">WhatsApp</a>
-<a class="btn btn--ghost" href="https://github.com/tu-github" target="_blank" rel="noopener">GitHub</a>
-<a class="btn btn--ghost" href="https://www.linkedin.com/in/tu-linkedin" target="_blank" rel="noopener">LinkedIn</a>
-</p>
-</div>
-</div>
-</section>
-</main>
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-number">06</span>
+                <h2 class="section-title">
+                    <span class="title-icon">📬</span>
+                    Contacto
+                </h2>
+                <p class="section-subtitle">Construyamos algo increíble juntos</p>
+            </div>
+            
+            <div class="contact-content">
+                <div class="contact-info">
+                    <h3>¿Tienes un proyecto en mente?</h3>
+                    <p>
+                        Estoy siempre abierto a discutir nuevos proyectos, ideas creativas o 
+                        oportunidades para ser parte de tu visión.
+                    </p>
+                    
+                    <div class="contact-items">
+                        <div class="contact-item">
+                            <i class="fas fa-envelope"></i>
+                            <div>
+                                <span>Email</span>
+                                <a href="mailto:miqueasq@gmail.com">miqueasq@gmail.com</a>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-phone"></i>
+                            <div>
+                                <span>Teléfono</span>
+                                <a href="tel:+51955336170">+51 955 336 170</a>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <div>
+                                <span>Ubicación</span>
+                                <span>Ayacucho, Perú (GMT-5)</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="social-links">
+                        <a href="https://github.com/Miqueas7" target="_blank" aria-label="GitHub">
+                            <i class="fab fa-github"></i>
+                        </a>
+                        <a href="https://www.linkedin.com/in/mqv/" target="_blank" aria-label="LinkedIn">
+                            <i class="fab fa-linkedin"></i>
+                        </a>
+                        <a href="https://wa.me/51955336170" target="_blank" aria-label="WhatsApp">
+                            <i class="fab fa-whatsapp"></i>
+                        </a>
+                        <a href="https://es.fiverr.com/miqueas7" target="_blank" aria-label="Fiverr">
+                            <i class="fas fa-briefcase"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="contact-form">
+                    <form id="contactForm">
+                        <div class="form-group">
+                            <input type="text" id="name" name="name" required>
+                            <label for="name">Nombre</label>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" id="email" name="email" required>
+                            <label for="email">Email</label>
+                        </div>
+                        <div class="form-group">
+                            <input type="text" id="subject" name="subject" required>
+                            <label for="subject">Asunto</label>
+                        </div>
+                        <div class="form-group">
+                            <textarea id="message" name="message" rows="5" required></textarea>
+                            <label for="message">Mensaje</label>
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-block">
+                            <i class="fas fa-paper-plane"></i>
+                            Enviar mensaje
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
 
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <h3>Miqueas Quintanilla</h3>
+                    <p>Mining Engineer & Data Scientist</p>
+                </div>
+                <div class="footer-links">
+                    <a href="#home">Inicio</a>
+                    <a href="#about">Sobre mí</a>
+                    <a href="#projects">Proyectos</a>
+                    <a href="#contact">Contacto</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; <span id="year"></span> Miqueas Quintanilla. All rights reserved.</p>
+                <p>Hecho con <i class="fas fa-heart"></i> y mucho <i class="fas fa-coffee"></i></p>
+            </div>
+        </div>
+    </footer>
 
-<footer class="site-footer">
-<div class="container">
-<img src="assets/img/pattern-hex.svg" alt="" aria-hidden="true" class="footer__pattern" />
-<p>© <span id="year"></span> Miqueas Quintanilla Ventura — Lima, Perú</p>
-<a href="#top" class="back-to-top" aria-label="Volver arriba">↑</a>
-</div>
-</footer>
+    <!-- Terminal Modal -->
+    <div class="terminal-modal" id="terminalModal">
+        <div class="terminal-container">
+            <div class="terminal-header">
+                <span class="terminal-title">
+                    <i class="fas fa-terminal"></i> miqueas@portfolio:~$
+                </span>
+                <button class="terminal-close" id="terminalClose">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="terminal-body" id="terminalBody">
+                <div class="terminal-output" id="terminalOutput">
+                    <p class="terminal-welcome">
+                        Welcome to Miqueas Portfolio Terminal v1.0.0<br>
+                        Type 'help' for available commands
+                    </p>
+                </div>
+                <div class="terminal-input-line">
+                    <span class="terminal-prompt">></span>
+                    <input type="text" id="terminalInput" class="terminal-input" autofocus>
+                </div>
+            </div>
+        </div>
+    </div>
 
+    <!-- Back to Top -->
+    <button class="back-to-top" id="backToTop" aria-label="Volver arriba">
+        <i class="fas fa-chevron-up"></i>
+    </button>
 
-<script src="main.js" defer></script>
+    <!-- Scripts -->
+    <script src="assets/js/particles.js"></script>
+    <script src="assets/js/animations.js"></script>
+    <script src="assets/js/terminal.js"></script>
+    <script src="assets/js/projects.js"></script>
+    <script src="assets/js/main.js"></script>
 </body>
 </html>
