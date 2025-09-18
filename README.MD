@@ -14,7 +14,7 @@ Soy un Ingeniero de Minas especializado en Machine Learning y desarrollo de soft
 🎓 **Formación:**
 - 🏔️ Ingeniero de Minas - UNSCH
 - 💻 Maestría en Ingeniería de Software - UNMSM (1er puesto)
-- 📜 Microsoft Office Specialist Expert
+- 📜 Data Science - Engiginer Machine Lear
 
 ## 🌟 Features del Portfolio
 
@@ -53,115 +53,6 @@ Soy un Ingeniero de Minas especializado en Machine Learning y desarrollo de soft
 - GitHub Pages
 - VS Code
 
-## 📁 Estructura del Proyecto
-
-```
-portfolio-miqueas/
-│
-├── 📁 assets/
-│   ├── 📁 css/
-│   │   ├── main.css          # Estilos principales
-│   │   ├── animations.css    # Animaciones
-│   │   └── responsive.css    # Media queries
-│   │
-│   ├── 📁 js/
-│   │   ├── main.js          # JavaScript principal
-│   │   ├── animations.js    # Control de animaciones
-│   │   ├── terminal.js      # Terminal interactiva
-│   │   ├── particles.js     # Efecto de partículas
-│   │   └── projects.js      # Gestión de proyectos
-│   │
-│   ├── 📁 img/
-│   │   ├── profile.jpg
-│   │   ├── favicon.ico
-│   │   └── projects/
-│   │
-│   └── 📁 docs/
-│       └── CV_Miqueas_Quintanilla.pdf
-│
-├── 📁 data/
-│   ├── projects.json        # Datos de proyectos
-│   ├── skills.json          # Datos de habilidades
-│   └── experience.json      # Datos de experiencia
-│
-├── index.html               # Página principal
-├── README.md               # Este archivo
-├── .gitignore
-├── manifest.json           # PWA manifest
-├── robots.txt
-└── sitemap.xml
-```
-
-## 🚀 Quick Start
-
-### Instalación Local
-
-1. **Clona el repositorio**
-```bash
-git clone https://github.com/Miqueas7/portfolio.git
-cd portfolio
-```
-
-2. **Abre en VS Code**
-```bash
-code .
-```
-
-3. **Lanza con Live Server**
-- Instala la extensión "Live Server" en VS Code
-- Click derecho en `index.html`
-- Selecciona "Open with Live Server"
-
-### Deploy en GitHub Pages
-
-1. **Fork este repositorio**
-
-2. **Habilita GitHub Pages**
-- Ve a Settings → Pages
-- Source: Deploy from a branch
-- Branch: main / root
-- Save
-
-3. **Personaliza tu contenido**
-- Edita `index.html` con tu información
-- Actualiza las imágenes en `/assets/img/`
-- Modifica los colores en `/assets/css/main.css`
-
-## 🎨 Personalización
-
-### Cambiar Colores
-Edita las variables CSS en `main.css`:
-
-```css
-:root {
-  --copper: #b87333;        /* Tu color primario */
-  --cyan-tech: #06b6d4;    /* Color de acento */
-  --carbon-black: #0a0e1a; /* Fondo principal */
-}
-```
-
-### Agregar Proyectos
-Edita el array de proyectos en `main.js`:
-
-```javascript
-const projects = [
-  {
-    title: 'Tu Proyecto',
-    description: 'Descripción',
-    tech: ['Python', 'ML'],
-    github: 'link',
-    demo: 'link'
-  }
-];
-```
-
-## 📈 Performance
-
-- **Lighthouse Score**: 95+ en todas las métricas
-- **Load Time**: < 2s
-- **First Contentful Paint**: < 1s
-- **SEO Score**: 100/100
-
 ## 🤝 Contribuciones
 
 ¡Las contribuciones son bienvenidas! Si tienes alguna sugerencia o encuentras algún bug:
@@ -187,6 +78,7 @@ Este proyecto está bajo la Licencia MIT - mira el archivo [LICENSE](LICENSE) pa
 
 ## 🙏 Agradecimientos
 
+- Mi familia, que es mi mayor inspiración.
 - Font Awesome por los iconos
 - Google Fonts por las tipografías
 - La comunidad open source por la inspiración
