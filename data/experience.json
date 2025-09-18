@@ -1,0 +1,20 @@
+[
+  {
+    "date": "Dic 2024 - Mar 2025",
+    "title": "Líder de Proyecto Software",
+    "company": "Proyecto Carreteras MTC",
+    "category": "software",
+    "description": "Desarrollo de software para creación masiva de planos y ML para riesgo geológico.",
+    "achievements": ["700+ planos en minutos", "Web Scraping MTC", "Machine Learning"],
+    "tech": ["Python", "C#", "Selenium", "MySQL"]
+  },
+  {
+    "date": "Oct 2024 - Actualidad",
+    "title": "Docente Minería 4.0",
+    "company": "INARQ",
+    "category": "teaching",
+    "description": "Programa especializado en Minería 4.0: Innovación e IA aplicada.",
+    "achievements": ["Python para minería", "Machine Learning", "IA aplicada"],
+    "tech": ["Python", "Colab", "Jupyter"]
+  }
+]

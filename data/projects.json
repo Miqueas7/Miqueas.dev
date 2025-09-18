@@ -1,0 +1,18 @@
+[
+  {
+    "title": "Software Creación Masiva de Planos",
+    "category": "automation",
+    "description": "Automatización para generar 700+ planos en minutos con ML para riesgo geológico.",
+    "tech": ["Python", "C#", "Machine Learning"],
+    "github": "https://github.com/Miqueas7/Repositorio-Freelancer",
+    "demo": "#"
+  },
+  {
+    "title": "ML para Sostenimiento Minero",
+    "category": "ml",
+    "description": "Modelo predictivo para selección óptima de sostenimiento en minas.",
+    "tech": ["TensorFlow", "Python", "Scikit-learn"],
+    "github": "#",
+    "demo": "#"
+  }
+]

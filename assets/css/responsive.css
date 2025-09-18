@@ -1,0 +1,50 @@
+/* Breakpoints base */
+@media (max-width: 1200px) {
+  .container {
+    max-width: 1000px;
+  }
+}
+
+@media (max-width: 992px) {
+  .hero-content {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+  .hero-cta {
+    justify-content: center;
+  }
+  .floating-cards {
+    display: none;
+  }
+}
+
+@media (max-width: 768px) {
+  .nav-menu {
+    position: fixed;
+    inset: 64px 0 auto 0;
+    background: rgba(10, 14, 26, 0.98);
+    display: none;
+    flex-direction: column;
+    gap: 0.25rem;
+    padding: 1rem;
+  }
+  .nav-menu.active {
+    display: flex;
+  }
+  .nav-toggle {
+    display: flex;
+  }
+  .projects-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 576px) {
+  .hero-stats {
+    gap: 1rem;
+  }
+  .btn {
+    width: 100%;
+    justify-content: center;
+  }
+}

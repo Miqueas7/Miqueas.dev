@@ -1,0 +1,20 @@
+{
+  "mining": [
+    { "name": "VentSim", "level": 90 },
+    { "name": "Rocscience", "level": 85 },
+    { "name": "Civil 3D", "level": 88 },
+    { "name": "AutoCAD", "level": 92 }
+  ],
+  "dev": [
+    { "name": "Python", "level": 95 },
+    { "name": "C# / .NET", "level": 85 },
+    { "name": "JavaScript", "level": 80 },
+    { "name": "SQL", "level": 90 }
+  ],
+  "data": [
+    { "name": "TensorFlow", "level": 85 },
+    { "name": "Power BI", "level": 90 },
+    { "name": "Machine Learning", "level": 88 },
+    { "name": "Data Visualization", "level": 92 }
+  ]
+}
