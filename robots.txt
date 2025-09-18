@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://miqueas.dev/sitemap.xml
