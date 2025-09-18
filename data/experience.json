@@ -1,20 +1,53 @@
-[
-  {
-    "date": "Dic 2024 - Mar 2025",
-    "title": "Líder de Proyecto Software",
-    "company": "Proyecto Carreteras MTC",
-    "category": "software",
-    "description": "Desarrollo de software para creación masiva de planos y ML para riesgo geológico.",
-    "achievements": ["700+ planos en minutos", "Web Scraping MTC", "Machine Learning"],
-    "tech": ["Python", "C#", "Selenium", "MySQL"]
-  },
-  {
-    "date": "Oct 2024 - Actualidad",
-    "title": "Docente Minería 4.0",
-    "company": "INARQ",
-    "category": "teaching",
-    "description": "Programa especializado en Minería 4.0: Innovación e IA aplicada.",
-    "achievements": ["Python para minería", "Machine Learning", "IA aplicada"],
-    "tech": ["Python", "Colab", "Jupyter"]
-  }
-]
+{
+  "experience": [
+    {
+      "id": 1,
+      "date": "Dic 2024 - Mar 2025",
+      "title": "Líder de Proyecto Software",
+      "company": "Proyecto Carreteras MTC",
+      "location": "Perú",
+      "type": "software",
+      "current": true,
+      "description": "Liderando desarrollo de software para creación masiva de planos y documentación técnica con implementación de ML",
+      "achievements": [
+        "700+ planos generados en minutos",
+        "Implementación de Web Scraping para MTC",
+        "Modelo ML para detección de riesgo geológico",
+        "Optimización del 95% en tiempos de procesamiento"
+      ],
+      "technologies": ["Python", "C#", "Selenium", "Machine Learning", "MySQL", "Notion"]
+    },
+    {
+      "id": 2,
+      "date": "Oct 2024 - Actualidad",
+      "title": "Docente Minería 4.0",
+      "company": "INARQ",
+      "location": "Perú",
+      "type": "teaching",
+      "current": true,
+      "description": "Instructor del programa especializado en Minería 4.0: Innovación e implementación IA",
+      "achievements": [
+        "Desarrollo de curriculum especializado",
+        "Formación en Python aplicado a minería",
+        "Implementación de casos prácticos reales"
+      ],
+      "technologies": ["Python", "IA", "Machine Learning", "Colab", "Jupyter"]
+    },
+    {
+      "id": 3,
+      "date": "Jul 2024 - Sep 2024",
+      "title": "Docente Programación",
+      "company": "Universidad Nacional Mayor de San Marcos",
+      "location": "Oyón, Perú",
+      "type": "teaching",
+      "current": false,
+      "description": "Docente del curso de Programación y Computación para Ingeniería Geológica",
+      "achievements": [
+        "Desarrollo de aplicaciones geológicas",
+        "Enseñanza de fundamentos algorítmicos",
+        "Proyectos aplicados a la industria"
+      ],
+      "technologies": ["PSeInt", "Python", "ChatGPT", "Notion"]
+    }
+  ]
+}

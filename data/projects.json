@@ -1,18 +1,90 @@
-[
-  {
-    "title": "Software Creación Masiva de Planos",
-    "category": "automation",
-    "description": "Automatización para generar 700+ planos en minutos con ML para riesgo geológico.",
-    "tech": ["Python", "C#", "Machine Learning"],
-    "github": "https://github.com/Miqueas7/Repositorio-Freelancer",
-    "demo": "#"
-  },
-  {
-    "title": "ML para Sostenimiento Minero",
-    "category": "ml",
-    "description": "Modelo predictivo para selección óptima de sostenimiento en minas.",
-    "tech": ["TensorFlow", "Python", "Scikit-learn"],
-    "github": "#",
-    "demo": "#"
-  }
-]
+{
+  "projects": [
+    {
+      "id": 1,
+      "title": "Software Creación Masiva de Planos MTC",
+      "description": "Sistema automatizado para generar 700+ planos técnicos en minutos con detección de riesgo geológico mediante ML",
+      "category": "automation",
+      "featured": true,
+      "technologies": ["Python", "C#", "Machine Learning", "Selenium", "MySQL"],
+      "achievements": [
+        "700+ planos generados en minutos",
+        "Integración con plataforma MTC mediante Web Scraping",
+        "Modelo ML para detección de zonas de alto riesgo geológico",
+        "Reducción del 95% en tiempo de procesamiento"
+      ],
+      "github": "https://github.com/Miqueas7/Repositorio-Freelancer",
+      "demo": null,
+      "image": "assets/img/projects/mtc-software.jpg",
+      "year": "2024-2025"
+    },
+    {
+      "id": 2,
+      "title": "ML para Sostenimiento Minero",
+      "description": "Modelo predictivo para selección óptima de sostenimiento en Unidad Minera Catalina Huanca",
+      "category": "ml",
+      "featured": true,
+      "technologies": ["TensorFlow", "Python", "Scikit-learn", "Pandas", "NumPy"],
+      "achievements": [
+        "Precisión del 92% en predicciones",
+        "Reducción del 30% en costos de sostenimiento",
+        "Procesamiento de 10,000+ datos históricos"
+      ],
+      "github": "#",
+      "demo": "#",
+      "image": "assets/img/projects/ml-mining.jpg",
+      "year": "2023"
+    },
+    {
+      "id": 3,
+      "title": "Sistema de Ventilación Minera",
+      "description": "Software para cálculo de cobertura de aire según normativa peruana DS 023-2017 EM",
+      "category": "mining",
+      "featured": true,
+      "technologies": ["Python", "VentSim", "Excel", "VBA"],
+      "achievements": [
+        "100% cumplimiento normativo",
+        "Automatización de cálculos complejos",
+        "Reportes automáticos para auditorías"
+      ],
+      "github": "#",
+      "demo": "#",
+      "image": "assets/img/projects/ventilation.jpg",
+      "year": "2023"
+    },
+    {
+      "id": 4,
+      "title": "Sistema Gestor de Aceros RockTools",
+      "description": "Plataforma de gestión con base de datos en la nube para control de inventario",
+      "category": "software",
+      "featured": false,
+      "technologies": ["C#", ".NET", "MySQL", "Azure"],
+      "achievements": [
+        "Control en tiempo real",
+        "Reducción del 40% en pérdidas",
+        "Dashboard analítico"
+      ],
+      "github": "#",
+      "demo": "#",
+      "image": "assets/img/projects/rocktools.jpg",
+      "year": "2023"
+    },
+    {
+      "id": 5,
+      "title": "Automatización Geotécnica",
+      "description": "Suite de herramientas para automatización de ensayos y reportes geotécnicos",
+      "category": "automation",
+      "featured": false,
+      "technologies": ["Python", "Excel", "AutoCAD", "VBA"],
+      "achievements": [
+        "50% reducción en tiempo de procesamiento",
+        "Cumplimiento ASTM/NTP",
+        "Generación automática de planos"
+      ],
+      "github": "https://github.com/Miqueas7/Repositorio-Freelancer",
+      "demo": "#",
+      "image": "assets/img/projects/geotech.jpg",
+      "year": "2021-2022"
+    }
+  ]
+}

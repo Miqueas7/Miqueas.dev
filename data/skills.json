@@ -1,20 +1,48 @@
 {
   "mining": [
-    { "name": "VentSim", "level": 90 },
-    { "name": "Rocscience", "level": 85 },
-    { "name": "Civil 3D", "level": 88 },
-    { "name": "AutoCAD", "level": 92 }
+    {"name": "VentSim", "level": 90, "category": "software"},
+    {"name": "Rocscience", "level": 85, "category": "software"},
+    {"name": "Civil 3D", "level": 88, "category": "software"},
+    {"name": "AutoCAD", "level": 92, "category": "software"},
+    {"name": "Maptek Vulcan", "level": 75, "category": "software"},
+    {"name": "Mineplan", "level": 70, "category": "software"},
+    {"name": "Deswik", "level": 75, "category": "software"},
+    {"name": "ArcGIS", "level": 85, "category": "gis"},
+    {"name": "QGIS", "level": 80, "category": "gis"},
+    {"name": "Google Earth Pro", "level": 90, "category": "gis"}
   ],
-  "dev": [
-    { "name": "Python", "level": 95 },
-    { "name": "C# / .NET", "level": 85 },
-    { "name": "JavaScript", "level": 80 },
-    { "name": "SQL", "level": 90 }
+  "development": [
+    {"name": "Python", "level": 95, "category": "language"},
+    {"name": "C# / .NET", "level": 85, "category": "language"},
+    {"name": "JavaScript", "level": 80, "category": "language"},
+    {"name": "SQL", "level": 90, "category": "language"},
+    {"name": "VBA", "level": 88, "category": "language"},
+    {"name": "HTML/CSS", "level": 85, "category": "web"},
+    {"name": "Blazor", "level": 75, "category": "framework"},
+    {"name": "Django", "level": 70, "category": "framework"},
+    {"name": "React", "level": 65, "category": "framework"},
+    {"name": "Git/GitHub", "level": 85, "category": "tools"}
   ],
-  "data": [
-    { "name": "TensorFlow", "level": 85 },
-    { "name": "Power BI", "level": 90 },
-    { "name": "Machine Learning", "level": 88 },
-    { "name": "Data Visualization", "level": 92 }
+  "datascience": [
+    {"name": "TensorFlow", "level": 85, "category": "ml"},
+    {"name": "Scikit-learn", "level": 90, "category": "ml"},
+    {"name": "Pandas", "level": 95, "category": "data"},
+    {"name": "NumPy", "level": 90, "category": "data"},
+    {"name": "Matplotlib", "level": 85, "category": "visualization"},
+    {"name": "Power BI", "level": 90, "category": "visualization"},
+    {"name": "Tableau", "level": 75, "category": "visualization"},
+    {"name": "SQL Server", "level": 88, "category": "database"},
+    {"name": "MySQL", "level": 90, "category": "database"},
+    {"name": "PostgreSQL", "level": 75, "category": "database"}
+  ],
+  "soft": [
+    {"name": "Liderazgo de Equipos", "level": 85},
+    {"name": "Gestión de Proyectos", "level": 90},
+    {"name": "Comunicación Técnica", "level": 88},
+    {"name": "Docencia", "level": 90},
+    {"name": "Resolución de Problemas", "level": 95},
+    {"name": "Trabajo en Equipo", "level": 90},
+    {"name": "Innovación", "level": 92},
+    {"name": "Pensamiento Analítico", "level": 95}
   ]
 }
