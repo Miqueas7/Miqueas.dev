@@ -26,8 +26,11 @@
       property="og:description"
       content="Transformando la minería con tecnología: ML, IA y automatización"
     />
-    <meta property="og:image" content="assets/img/og-image.jpg" />
-    <meta property="og:url" content="https://miqueas7.github.io" />
+    <meta
+      property="og:image"
+      content="https://miqueas.dev/assets/img/og-image.jpg"
+    />
+    <meta property="og:url" content="https://miqueas.dev" />
     <meta property="og:type" content="website" />
 
     <!-- Twitter Card -->
@@ -225,7 +228,16 @@
           <div class="hero-image">
             <div class="image-frame">
               <div class="image-glow"></div>
-              <!-- Aquí iría tu foto o un avatar 3D -->
+              <img
+                src="assets/img/profile.jpg"
+                alt="Miqueas Quintanilla"
+                style="
+                  width: 100%;
+                  height: 100%;
+                  object-fit: cover;
+                  border-radius: inherit;
+                "
+              />
             </div>
           </div>
         </div>
@@ -407,6 +419,29 @@
           <p class="section-subtitle">
             Soluciones que transforman la industria
           </p>
+        </div>
+
+        <div class="projects-filters">
+          <button class="filter-btn active" data-filter="all">
+            <i class="fas fa-th"></i> Todos
+            <span class="filter-count">6</span>
+          </button>
+          <button class="filter-btn" data-filter="automation">
+            <i class="fas fa-robot"></i> Automatización
+            <span class="filter-count">2</span>
+          </button>
+          <button class="filter-btn" data-filter="ml">
+            <i class="fas fa-brain"></i> Machine Learning
+            <span class="filter-count">1</span>
+          </button>
+          <button class="filter-btn" data-filter="mining">
+            <i class="fas fa-hard-hat"></i> Minería
+            <span class="filter-count">1</span>
+          </button>
+          <button class="filter-btn" data-filter="software">
+            <i class="fas fa-code"></i> Software
+            <span class="filter-count">1</span>
+          </button>
         </div>
 
         <div class="projects-grid" id="projectsGrid">

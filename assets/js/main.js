@@ -377,17 +377,13 @@ function initSkillsRadar(canvas) {
 // =============================================
 async function loadDynamicContent() {
   try {
-    // Load experience timeline
-    await loadExperienceTimeline();
-
-    // Load projects
-    await loadProjects();
-
-    // Load skills
-    await loadSkills();
-
-    // Load certifications
-    await loadCertifications();
+    // Load all dynamic content from JSON files
+    await Promise.all([
+      loadExperienceTimeline(),
+      loadProjects(),
+      loadSkills(),
+      loadCertifications(),
+    ]);
   } catch (error) {
     console.error("Error loading dynamic content:", error);
   }
@@ -397,53 +393,50 @@ async function loadExperienceTimeline() {
   const timeline = document.getElementById("experienceTimeline");
   if (!timeline) return;
 
-  const experiences = [
-    {
-      date: "Dic 2024 - Mar 2025",
-      title: "Líder de Proyecto Software",
-      company: "Proyecto Carreteras MTC",
-      category: "software",
-      description:
-        "Liderando desarrollo de software para creación masiva de planos, implementación de ML para detección de zonas de riesgo geológico.",
-      achievements: [
-        "700+ planos en minutos",
-        "Web Scraping MTC",
-        "Machine Learning",
-      ],
-      tech: ["Python", "C#", "Selenium", "MySQL"],
-    },
-    {
-      date: "Oct 2024 - Actualidad",
-      title: "Docente Minería 4.0",
-      company: "INARQ",
-      category: "teaching",
-      description:
-        "Programa especializado en Minería 4.0: Innovación e implementación IA.",
-      achievements: ["Python para minería", "Machine Learning", "IA aplicada"],
-      tech: ["Python", "Colab", "Jupyter"],
-    },
-    {
-      date: "Sep 2023 - Mar 2024",
-      title: "Project Manager & AI Strategy",
-      company: "EDT Consulting",
-      category: "software",
-      description:
-        "Lideré equipo de Operaciones, gestionando proyectos de ML para minería.",
-      achievements: [
-        "15 analistas formados",
-        "ML en sostenimiento",
-        "Sistema gestor de aceros",
-      ],
-      tech: ["Python", "Power BI", "SQL Server", "Scrum"],
-    },
-  ];
+  try {
+    // Load from JSON file
+    const response = await fetch("data/experience.json");
+    const data = await response.json();
+    const experiences = data.experience;
+
+    // Store experiences globally for filtering
+    window.allExperiences = experiences;
+
+    renderExperiences(experiences);
+    setupExperienceFilters();
+  } catch (error) {
+    console.error("Error loading experience:", error);
+    // Fallback data if JSON fails
+    const fallbackExperiences = [
+      {
+        date: "Dic 2024 - Mar 2025",
+        title: "Líder de Proyecto Software",
+        company: "Proyecto Carreteras MTC",
+        type: "software",
+        description:
+          "Liderando desarrollo de software para creación masiva de planos.",
+        achievements: [
+          "700+ planos en minutos",
+          "Web Scraping MTC",
+          "Machine Learning",
+        ],
+        technologies: ["Python", "C#", "Selenium", "MySQL"],
+      },
+    ];
+    renderExperiences(fallbackExperiences);
+  }
+}
+
+function renderExperiences(experiences) {
+  const timeline = document.getElementById("experienceTimeline");
+  if (!timeline) return;
 
   timeline.innerHTML = experiences
     .map(
       (exp, index) => `
         <div class="timeline-item ${
           index % 2 === 0 ? "left" : "right"
-        }" data-category="${exp.category}">
+        }" data-category="${exp.type || exp.category}">
             <div class="timeline-content">
                 <span class="timeline-date">${exp.date}</span>
                 <h3>${exp.title}</h3>
@@ -453,7 +446,7 @@ async function loadExperienceTimeline() {
                     ${exp.achievements.map((a) => `<li>${a}</li>`).join("")}
                 </ul>
                 <div class="timeline-tech">
-                    ${exp.tech
+                    ${(exp.technologies || exp.tech || [])
                       .map((t) => `<span class="tech-badge">${t}</span>`)
                       .join("")}
                 </div>
@@ -464,99 +457,179 @@ async function loadExperienceTimeline() {
     .join("");
 }
 
+function setupExperienceFilters() {
+  const filterButtons = document.querySelectorAll(
+    ".experience-filters .filter-btn"
+  );
+
+  filterButtons.forEach((btn) => {
+    btn.addEventListener("click", () => {
+      const filter = btn.dataset.filter;
+
+      // Update active button
+      filterButtons.forEach((b) => b.classList.remove("active"));
+      btn.classList.add("active");
+
+      // Filter experiences
+      if (filter === "all") {
+        renderExperiences(window.allExperiences || []);
+      } else {
+        const filtered = (window.allExperiences || []).filter(
+          (exp) => exp.type === filter || exp.category === filter
+        );
+        renderExperiences(filtered);
+      }
+    });
+  });
+}
+
 async function loadProjects() {
   const projectsGrid = document.getElementById("projectsGrid");
   if (!projectsGrid) return;
 
-  const projects = [
-    {
-      title: "Software Creación Masiva de Planos",
-      category: "automation",
-      description:
-        "Automatización para generar 700+ planos en minutos con ML para riesgo geológico",
-      tech: ["Python", "C#", "Machine Learning"],
-      github: "https://github.com/Miqueas7/Repositorio-Freelancer",
-      demo: "#",
-    },
-    {
-      title: "ML para Sostenimiento Minero",
-      category: "ml",
-      description:
-        "Modelo predictivo para selección óptima de sostenimiento en minas",
-      tech: ["TensorFlow", "Python", "Scikit-learn"],
-      github: "#",
-      demo: "#",
-    },
-    {
-      title: "Sistema Ventilación Minera",
-      category: "mining",
-      description:
-        "Software para cálculo de cobertura de aire según DS 023-2017 EM",
-      tech: ["Python", "VentSim", "Excel"],
-      github: "#",
-      demo: "#",
-    },
-  ];
+  try {
+    // Load from JSON file
+    const response = await fetch("data/projects.json");
+    const data = await response.json();
+    const projects = data.projects;
+
+    // Store projects globally for filtering
+    window.allProjects = projects;
+
+    renderProjects(projects);
+    setupProjectFilters();
+  } catch (error) {
+    console.error("Error loading projects:", error);
+    // Fallback data
+    const fallbackProjects = [
+      {
+        title: "Software Creación Masiva de Planos",
+        category: "automation",
+        description:
+          "Automatización para generar 700+ planos en minutos con ML",
+        technologies: ["Python", "C#", "Machine Learning"],
+        github: "https://github.com/Miqueas7/Repositorio-Freelancer",
+        featured: true,
+      },
+    ];
+    renderProjects(fallbackProjects);
+  }
+}
+
+function renderProjects(projects) {
+  const projectsGrid = document.getElementById("projectsGrid");
+  if (!projectsGrid) return;
 
   projectsGrid.innerHTML = projects
     .map(
       (project) => `
-        <div class="project-card" data-category="${project.category}">
+        <div class="project-card ${
+          project.featured ? "featured" : ""
+        }" data-category="${project.category}">
+            ${
+              project.featured
+                ? '<span class="featured-badge">⭐ Destacado</span>'
+                : ""
+            }
             <div class="project-header">
                 <h3>${project.title}</h3>
                 <div class="project-links">
-                    <a href="${
-                      project.github
-                    }" target="_blank" aria-label="GitHub">
-                        <i class="fab fa-github"></i>
-                    </a>
-                    <a href="${project.demo}" target="_blank" aria-label="Demo">
-                        <i class="fas fa-external-link-alt"></i>
-                    </a>
+                    ${
+                      project.github && project.github !== "#"
+                        ? `
+                        <a href="${project.github}" target="_blank" aria-label="GitHub">
+                            <i class="fab fa-github"></i>
+                        </a>
+                    `
+                        : ""
+                    }
+                    ${
+                      project.demo && project.demo !== "#"
+                        ? `
+                        <a href="${project.demo}" target="_blank" aria-label="Demo">
+                            <i class="fas fa-external-link-alt"></i>
+                        </a>
+                    `
+                        : ""
+                    }
                 </div>
             </div>
             <p>${project.description}</p>
+            ${
+              project.achievements
+                ? `
+                <div class="project-achievements">
+                    ${project.achievements
+                      .slice(0, 2)
+                      .map(
+                        (a) => `
+                        <div class="achievement-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span>${a}</span>
+                        </div>
+                    `
+                      )
+                      .join("")}
+                </div>
+            `
+                : ""
+            }
             <div class="project-tech">
-                ${project.tech
-                  .map((t) => `<span class="tech-tag">${t}</span>`)
+                ${(project.technologies || project.tech || [])
+                  .slice(0, 4)
+                  .map(
+                    (t) => `
+                    <span class="tech-tag">${t}</span>
+                `
+                  )
                   .join("")}
             </div>
+            ${
+              project.year
+                ? `<span class="project-year">${project.year}</span>`
+                : ""
+            }
         </div>
     `
     )
     .join("");
 }
 
+function setupProjectFilters() {
+  // This will be handled by projects.js
+}
+
 async function loadSkills() {
-  const miningSkills = document.getElementById("miningSkills");
-  const devSkills = document.getElementById("devSkills");
-  const dataSkills = document.getElementById("dataSkills");
+  try {
+    // Load from JSON file
+    const response = await fetch("data/skills.json");
+    const data = await response.json();
 
-  if (miningSkills) {
-    miningSkills.innerHTML = createSkillBars([
-      { name: "VentSim", level: 90 },
-      { name: "Rocscience", level: 85 },
-      { name: "Civil 3D", level: 88 },
-      { name: "AutoCAD", level: 92 },
-    ]);
-  }
+    const miningSkills = document.getElementById("miningSkills");
+    const devSkills = document.getElementById("devSkills");
+    const dataSkills = document.getElementById("dataSkills");
 
-  if (devSkills) {
-    devSkills.innerHTML = createSkillBars([
-      { name: "Python", level: 95 },
-      { name: "C# / .NET", level: 85 },
-      { name: "JavaScript", level: 80 },
-      { name: "SQL", level: 90 },
-    ]);
-  }
+    if (miningSkills && data.mining) {
+      miningSkills.innerHTML = createSkillBars(data.mining);
+    }
 
-  if (dataSkills) {
-    dataSkills.innerHTML = createSkillBars([
-      { name: "TensorFlow", level: 85 },
-      { name: "Power BI", level: 90 },
-      { name: "Machine Learning", level: 88 },
-      { name: "Data Visualization", level: 92 },
-    ]);
+    if (devSkills && data.development) {
+      devSkills.innerHTML = createSkillBars(data.development);
+    }
+
+    if (dataSkills && data.datascience) {
+      dataSkills.innerHTML = createSkillBars(data.datascience);
+    }
+  } catch (error) {
+    console.error("Error loading skills:", error);
+    // Fallback to default skills
+    const miningSkills = document.getElementById("miningSkills");
+    if (miningSkills) {
+      miningSkills.innerHTML = createSkillBars([
+        { name: "VentSim", level: 90 },
+        { name: "Rocscience", level: 85 },
+      ]);
+    }
   }
 }
 

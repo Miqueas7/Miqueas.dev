@@ -38,13 +38,18 @@
 }
 
 .highlight-card::before {
-  content: '';
+  content: "";
   position: absolute;
   top: 0;
   left: -100%;
   width: 100%;
   height: 100%;
-  background: linear-gradient(90deg, transparent, rgba(184, 115, 51, 0.1), transparent);
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(184, 115, 51, 0.1),
+    transparent
+  );
   transition: left 0.6s;
 }
 
@@ -178,12 +183,32 @@
   box-shadow: 0 0 20px rgba(184, 115, 51, 0.6);
 }
 
-.orbit-item.item-1 { top: 0; left: 50%; transform: translateX(-50%); }
-.orbit-item.item-2 { top: 25%; right: 10%; }
-.orbit-item.item-3 { bottom: 25%; right: 10%; }
-.orbit-item.item-4 { bottom: 0; left: 50%; transform: translateX(-50%); }
-.orbit-item.item-5 { bottom: 25%; left: 10%; }
-.orbit-item.item-6 { top: 25%; left: 10%; }
+.orbit-item.item-1 {
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.orbit-item.item-2 {
+  top: 25%;
+  right: 10%;
+}
+.orbit-item.item-3 {
+  bottom: 25%;
+  right: 10%;
+}
+.orbit-item.item-4 {
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.orbit-item.item-5 {
+  bottom: 25%;
+  left: 10%;
+}
+.orbit-item.item-6 {
+  top: 25%;
+  left: 10%;
+}
 
 /* ============================================= 
    Experience Timeline
@@ -232,7 +257,7 @@
 }
 
 .timeline::before {
-  content: '';
+  content: "";
   position: absolute;
   top: 0;
   left: 50%;
@@ -261,7 +286,7 @@
 }
 
 .timeline-item::after {
-  content: '';
+  content: "";
   position: absolute;
   top: 50%;
   width: 20px;
@@ -332,7 +357,7 @@
 }
 
 .timeline-achievements li::before {
-  content: '▸';
+  content: "▸";
   position: absolute;
   left: 0;
   color: var(--copper);
@@ -382,13 +407,18 @@
 }
 
 .project-card::before {
-  content: '';
+  content: "";
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 3px;
-  background: linear-gradient(90deg, var(--copper), var(--gold), var(--cyan-tech));
+  background: linear-gradient(
+    90deg,
+    var(--copper),
+    var(--gold),
+    var(--cyan-tech)
+  );
   transform: translateX(-100%);
   transition: transform var(--transition-base);
 }
@@ -553,7 +583,7 @@
 }
 
 .skill-progress::after {
-  content: '';
+  content: "";
   position: absolute;
   top: 0;
   left: 0;
@@ -611,13 +641,17 @@
 }
 
 .cert-card::before {
-  content: '';
+  content: "";
   position: absolute;
   top: -50%;
   left: -50%;
   width: 200%;
   height: 200%;
-  background: radial-gradient(circle, rgba(184, 115, 51, 0.1) 0%, transparent 70%);
+  background: radial-gradient(
+    circle,
+    rgba(184, 115, 51, 0.1) 0%,
+    transparent 70%
+  );
   animation: rotate 10s linear infinite;
 }
 
@@ -1032,4 +1066,465 @@
 
 .revealed {
   animation-play-state: running !important;
+}
+
+/* Animation Effects from JS files */
+/* Ripple Effect */
+.ripple {
+  position: absolute;
+  border-radius: 50%;
+  background: rgba(184, 115, 51, 0.3);
+  pointer-events: none;
+  animation: rippleEffect 0.6s ease-out;
+}
+
+@keyframes rippleEffect {
+  to {
+    transform: scale(4);
+    opacity: 0;
+  }
+}
+
+/* Button Glow */
+.button-glow {
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  background: radial-gradient(
+    circle,
+    rgba(184, 115, 51, 0.4) 0%,
+    transparent 70%
+  );
+  border-radius: 50%;
+  pointer-events: none;
+  transform: translate(-50%, -50%);
+  animation: glowExpand 1s ease-out;
+}
+
+@keyframes glowExpand {
+  to {
+    transform: translate(-50%, -50%) scale(3);
+    opacity: 0;
+  }
+}
+
+/* Shimmer Effect */
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+.skill-shimmer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.2),
+    transparent
+  );
+  animation: shimmer 2s infinite;
+}
+
+/* Character Animation */
+.char-animated {
+  display: inline-block;
+  animation: charFadeIn 0.5s ease-out backwards;
+}
+
+@keyframes charFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px) rotateX(90deg);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) rotateX(0);
+  }
+}
+
+/* Glitch Active */
+.glitch-active {
+  animation: glitchActive 0.5s ease-out;
+}
+
+@keyframes glitchActive {
+  0%,
+  100% {
+    text-shadow: 2px 2px 0px rgba(184, 115, 51, 0.5),
+      -2px -2px 0px rgba(6, 182, 212, 0.5);
+  }
+  25% {
+    text-shadow: -2px 2px 0px rgba(245, 158, 11, 0.5),
+      2px -2px 0px rgba(139, 92, 246, 0.5);
+  }
+  50% {
+    text-shadow: 2px -2px 0px rgba(16, 185, 129, 0.5),
+      -2px 2px 0px rgba(239, 68, 68, 0.5);
+  }
+}
+
+/* Additional Animations */
+@keyframes bounce {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes pulse {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes rotateIn {
+  from {
+    opacity: 0;
+    transform: rotate(-180deg) scale(0.8);
+  }
+  to {
+    opacity: 1;
+    transform: rotate(0) scale(1);
+  }
+}
+
+/* Skeleton Loading */
+.skeleton {
+  position: relative;
+  overflow: hidden;
+}
+
+.skeleton::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(184, 115, 51, 0.1),
+    transparent
+  );
+  animation: skeletonLoading 1.5s infinite;
+}
+
+@keyframes skeletonLoading {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+/* Project Modal Animations */
+@keyframes modalSlideIn {
+  from {
+    opacity: 0;
+    transform: translateY(-30px) scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* Project Modal Styles */
+.project-modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  z-index: 5000;
+}
+
+.project-modal.active {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.8);
+  backdrop-filter: blur(5px);
+}
+
+.modal-content {
+  position: relative;
+  background: var(--carbon-black);
+  border-radius: 20px;
+  max-width: 900px;
+  max-height: 90vh;
+  width: 90%;
+  overflow: hidden;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+  animation: modalSlideIn 0.3s ease-out;
+}
+
+.modal-close {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background: rgba(255, 255, 255, 0.1);
+  border: none;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  color: var(--text-primary);
+  font-size: 1.25rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  z-index: 10;
+}
+
+.modal-close:hover {
+  background: var(--danger);
+  color: white;
+  transform: rotate(90deg);
+}
+
+.modal-body {
+  padding: 40px;
+  overflow-y: auto;
+  max-height: 90vh;
+}
+
+.modal-header {
+  margin-bottom: 30px;
+}
+
+.modal-header h2 {
+  margin-bottom: 15px;
+  color: var(--copper);
+}
+
+.modal-badges {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.badge {
+  padding: 5px 12px;
+  border-radius: 15px;
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+
+.badge-active {
+  background: rgba(16, 185, 129, 0.2);
+  color: var(--emerald);
+}
+
+.badge-completed {
+  background: rgba(184, 115, 51, 0.2);
+  color: var(--copper);
+}
+
+.badge-year {
+  background: rgba(6, 182, 212, 0.2);
+  color: var(--cyan-tech);
+}
+
+.badge-featured {
+  background: rgba(245, 158, 11, 0.2);
+  color: var(--gold);
+}
+
+.modal-info {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+  padding: 20px;
+  background: var(--graphite);
+  border-radius: 10px;
+  margin-bottom: 30px;
+}
+
+.info-item {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.info-item i {
+  font-size: 1.5rem;
+  color: var(--copper);
+}
+
+.info-label {
+  display: block;
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.info-value {
+  display: block;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.modal-description,
+.modal-achievements,
+.modal-metrics,
+.modal-technologies {
+  margin-bottom: 30px;
+}
+
+.modal-description h3,
+.modal-achievements h3,
+.modal-metrics h3,
+.modal-technologies h3 {
+  color: var(--copper);
+  margin-bottom: 15px;
+}
+
+.achievements-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 15px;
+}
+
+.achievement-card {
+  background: var(--graphite);
+  padding: 15px;
+  border-radius: 10px;
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+}
+
+.achievement-card i {
+  color: var(--gold);
+  font-size: 1.25rem;
+  flex-shrink: 0;
+}
+
+.metrics-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  gap: 15px;
+}
+
+.metric-card {
+  background: linear-gradient(
+    135deg,
+    var(--graphite) 0%,
+    rgba(184, 115, 51, 0.1) 100%
+  );
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+}
+
+.metric-value {
+  display: block;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--copper);
+  margin-bottom: 5px;
+}
+
+.metric-label {
+  font-size: 0.75rem;
+  color: var(--text-secondary);
+  text-transform: uppercase;
+}
+
+.tech-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.tech-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 15px;
+  background: rgba(139, 92, 246, 0.1);
+  color: var(--violet-tech);
+  border-radius: 20px;
+  border: 1px solid rgba(139, 92, 246, 0.3);
+}
+
+.modal-actions {
+  display: flex;
+  gap: 15px;
+  padding-top: 20px;
+  border-top: 1px solid var(--graphite-light);
+}
+
+.btn-outline {
+  background: transparent;
+  border: 2px solid var(--graphite-light);
+  color: var(--text-primary);
+}
+
+.btn-outline:hover {
+  background: var(--graphite);
+  border-color: var(--copper);
+}
+
+/* Responsive Modal */
+@media (max-width: 768px) {
+  .modal-body {
+    padding: 20px;
+  }
+
+  .modal-info {
+    grid-template-columns: 1fr;
+  }
+
+  .achievements-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .metrics-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .modal-actions {
+    flex-direction: column;
+  }
+
+  .modal-actions .btn {
+    width: 100%;
+    justify-content: center;
+  }
 }
